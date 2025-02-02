@@ -1,0 +1,143 @@
+:root {
+    --primary-color: #FF4F4F;
+    --break-color: #4C9195;
+    --long-break-color: #457CA3;
+    --background-color: #1E2140;
+    --surface-color: #151932;
+    --text-color: #D7E0FF;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    text-align: center;
+    background-color: var(--surface-color);
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.timer-display {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 2rem auto;
+    background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    font-weight: 700;
+    box-shadow: -10px -10px 40px rgba(255, 255, 255, 0.05),
+                10px 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.timer-display::before {
+    content: '';
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: var(--surface-color);
+    z-index: 0;
+}
+
+.timer-display span {
+    position: relative;
+    z-index: 1;
+}
+
+.mode-switches {
+    background: var(--surface-color);
+    padding: 0.5rem;
+    border-radius: 31.5px;
+    display: inline-flex;
+    margin-bottom: 2rem;
+}
+
+.mode-switches button {
+    font-size: 0.9rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 26.5px;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.mode-switches button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.controls {
+    margin-top: 2rem;
+}
+
+.controls button {
+    font-size: 1rem;
+    margin: 0.5rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#start {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#start:hover {
+    background-color: #ff6666;
+}
+
+#pause {
+    border: 2px solid var(--text-color);
+}
+
+#pause:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#reset {
+    border: 2px solid var(--text-color);
+}
+
+#reset:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Add color changes for different modes */
+body.short-break {
+    --primary-color: var(--break-color);
+}
+
+body.long-break {
+    --primary-color: var(--long-break-color);
+} 
